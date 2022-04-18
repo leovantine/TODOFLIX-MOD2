@@ -1,4 +1,12 @@
 import React, {Component } from 'react'
+import Usericon from "./Imagens/Usericon.png"
+import Iconuser from "./Imagens/Iconuser.png"
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom"
 import styled from 'styled-components'
 import {createGlobalStyle} from 'styled-components'
 
@@ -7,16 +15,24 @@ const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} body{
+} 
+body{
+  width: 100%;
   background-color: #000;
 }
 `
 const Header = styled.div`
 display: flex;
-justify-content: space-around;
-width: 28vw;
-margin: 2vh;
-margin-left: 3vw;
+justify-content: space-between;
+width: 100vw;
+`
+const Home = styled.div`
+display: flex;
+justify-content: space-evenly;
+width: 35vw;
+height: 2vw;
+align-items: center;
+margin: 3vh;
 `
 const Title = styled.h1`
 font-family: 'Bebas Neue', cursive;
@@ -24,102 +40,87 @@ font-weight: 200;
 font-size: 40px;
 color: #E71B27;
 `
-const Home = styled.div`
-margin: 2vh;
-`
-const Paragraph = styled.p`
+const Homepage = styled.p`
 color: #fff;
 font-weight: 300;
 &:hover{
   cursor: pointer;
   font-weight: 400;
 }
-`
-const DetailsDiv = styled.div`
-margin: 2vh;
 `
 const Details = styled.details`
 color: #fff;
 `
-const Category = styled.summary`
+const List = styled.summary`
 font-weight: 300;
 &:hover{
   cursor: pointer;
   font-weight: 400;
 }
 `
-const All = styled.summary`
-font-weight: 300;
-&:hover{
-  cursor: pointer;
-  font-weight: 400;
-}
-`
-const Favorite = styled.summary`
-font-weight: 300;
-&:hover{
-  cursor: pointer;
-  font-weight: 400;
-}
-`
-const Watched = styled.summary`
-font-weight: 300;
-&:hover{
-  cursor: pointer;
-  font-weight: 400;
-}
-`
-const Add = styled.summary`
-font-weight: 300;
-&:hover{
-  cursor: pointer;
-  font-weight: 400;
-}
-`
-const Options = styled.div`
+const Optionsdiv = styled.div`
 display: flex;
-justify-content: flex-end;
-
+justify-content: space-evenly;
+width: 40%; 
+margin: 3vh;
 `
 const Button = styled.button`
-position: relative;
-margin-left: 55vw;
-bottom: 8vh;
-border: solid #E71B27;
-border-radius: 4px;
-width: 8vw;
-height: 5vh;
+width: 6vw;
+height: 4vh;
 font-size: 12px;
-font-weight: 300;
-background-color: #E71B27;
 color: #fff;
+background-color: #E71B27;
+border: none;
+border-radius: 4px;
 &:hover{
   cursor: pointer;
 }
+`
+const Search = styled.input`
+width: 22vw;
+height: 4vh;
+background-color: #2C2C2C;
+border: none;
+border-radius: 3px;
+
+`
+const Img = styled.img`
+width: 2vw;
+height: 4vh;
+`
+const NdImg = styled.img`
+width: 2vw;
+height: 5vh;
+margin-right: 2vw;
 `
 export default class App extends Component {
   render(){
     return(
-      <div>
+      <Router>
         <GlobalStyle/>
 
         <Header>
+          <Home>
         <Title>TODOFLIX</Title>
-        <Home>
-        <Paragraph>Início</Paragraph>
-        </Home>
-        <DetailsDiv>
+        <Homepage>Início</Homepage>
         <Details>
-          <Category>Categorias</Category>
-          <All>Todos</All>
-          <Favorite>Favoritos</Favorite>
-          <Watched>Já vistos</Watched>
-          <Add>Adicionados</Add>
+          <List>Categorias</List>
+          <List>Todos</List>
+          <List>Favoritos</List>
+          <List>Já vistos</List>
+          <List>Adicionados</List>
         </Details>
-        </DetailsDiv>
+        </Home>
+        <Optionsdiv>
+          <Button>Adicionar filme</Button>
+          <Search type="text" placeholder="Pesquisar"/>
+          <Img src={Usericon} alt="User icon"/>
+          <NdImg src={Iconuser} alt="User button"/>
+          </Optionsdiv>
         </Header>
-        <Button>Adicionar filme</Button>
-        </div>
+        
+        
+        </Router>
     )
   }
 }
