@@ -1,6 +1,7 @@
 import React, {Component } from 'react'
 import Usericon from "./Imagens/Usericon.png"
 import Iconuser from "./Imagens/Iconuser.png"
+import RedNotice from "./Imagens/RedNotice.jpg"
 import {
   BrowserRouter as Router,
   Routes,
@@ -25,6 +26,7 @@ const Header = styled.div`
 display: flex;
 justify-content: space-between;
 width: 100vw;
+posiiton: fixed;
 `
 const Home = styled.div`
 display: flex;
@@ -39,6 +41,7 @@ font-family: 'Bebas Neue', cursive;
 font-weight: 200;
 font-size: 40px;
 color: #E71B27;
+text-shadow: 0 0 1em red;
 `
 const Homepage = styled.p`
 color: #fff;
@@ -93,6 +96,18 @@ width: 2vw;
 height: 5vh;
 margin-right: 2vw;
 `
+const Divimg = styled.div`
+margin: 10vh;
+`
+const MainImg = styled.img`
+width: 30%;
+border-radius: 10px;
+box-shadow: inset 0 0 1em gold, 0 0 1em red;
+&:hover{
+  cursor: pointer;
+  transform:scale(1.1);
+}
+`
 export default class App extends Component {
   render(){
     return(
@@ -118,8 +133,10 @@ export default class App extends Component {
           <NdImg src={Iconuser} alt="User button"/>
           </Optionsdiv>
         </Header>
-        
-        
+
+        <Divimg>
+          <MainImg src={RedNotice} alt="Red Notice"/>
+        </Divimg>
         </Router>
     )
   }
