@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
+import RedNotice from "../Imagens/RedNotice.jpg"
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -47,6 +48,9 @@ const Overview = styled.p`
 color: #fff;
 width: 30vw;
 `
+const Thebest = styled.h2`
+color: #fff;
+`
 export default class App extends Component {
     render(){
         return(
@@ -63,6 +67,7 @@ export default class App extends Component {
             <Overview>Um alerta vermelho da Interpol é emitido e o agente do FBI John Hartley assume o caso. Durante sua busca, ele se vê diante de um assalto ousado e é forçado a se aliar ao maior ladrão de arte da história, Nolan Booth, para capturar a ladra de arte mais procurada do mundo atualmente, Sarah Black.</Overview>
             </Info>
         </Divimg>
+        <Thebest>Destaques</Thebest>
             </Container>
         )
     }

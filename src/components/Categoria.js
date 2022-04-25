@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { 
-    Link, Router
+    Link
 } from "react-router-dom"
 import { createGlobalStyle } from 'styled-components'
 
@@ -13,26 +13,27 @@ const GlobalStyle = createGlobalStyle`
 }
 `
 const Container = styled.div`
-position: absolute;
-
+background-color: #fff;
+position:absolute;
+top:6.5vh;
+left:18vw;
+    
 `
 const Ulist = styled.ul`
 list-style: none;
-width: 100%;
-height: 100%;
+color: #fff;
 `
 const List = styled.li`
-
+color: #fff;
 `
 const Linking = styled(Link)`
-
+color: #fff;
 `
 export default class App extends Component {
     render() {
         return (
-            <Router>
-            <GlobalStyle/>
                 <Container>
+                    <GlobalStyle/>
                     <Ulist>
                         <List>
                             <Linking to="/todos">Todos</Linking>
@@ -48,7 +49,6 @@ export default class App extends Component {
                         </List>
                     </Ulist>
                 </Container>
-                </Router>
         )
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from "./pages/Header.js"
-import Rota from "./components/Routes.js"
-import {BrowserRouter as Router} from 'react-router-dom'
+import Route from "./components/Routes.js"
+import {BrowserRouter as Router, Routes} from 'react-router-dom'
 import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components'
 
@@ -22,7 +22,7 @@ export default class App extends Component {
       <Router>
         <GlobalStyle />
         <Header/>
-        <Rota/>
+        <Route/>
       </Router>
     )
   }

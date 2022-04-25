@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import Usericon from "./Imagens/Usericon.png"
-import Iconuser from "./Imagens/Iconuser.png"
+import Usericon from "../Imagens/Usericon.png"
+import Iconuser from "../Imagens/Iconuser.png"
+import Lupa from "../Imagens/Lupa.png"
 import {
     Link
 } from 'react-router-dom'
-import Dropdown from "./components/Categoria.js"
+import Dropdown from "../components/Categoria.js"
 import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components'
 
@@ -38,15 +39,25 @@ font-weight: 200;
 font-size: 40px;
 color: #E71B27;
 text-shadow: 0 0 1em red;
+&:hover{
+    cursor: pointer;
+}
 `
 const Homepage = styled.p`
 color: #fff;
+font-size: 18px;
+font-weight: bolder;
+`
+const Linking = styled(Link)`
+text-decoration: none;
+color: #fff;
 &:hover{
-  cursor: pointer;
-  color: #E71B27;
+    cursor: pointer;
+    color: #E71B27;
 }
 `
 const Category = styled.h2`
+font-size: 18px;
 color: #fff;
 &:hover{
   cursor: pointer;
@@ -103,7 +114,7 @@ export default class App extends Component {
                 <Header>
                     <Home>
                         <Title>TODOFLIX</Title>
-                        <Homepage><Link to="/">Início</Link></Homepage>
+                        <Homepage><Linking to="/">Início</Linking></Homepage>
                         <Category onClick={this.modalcategory}>Categorias<span>&#9663;</span></Category>
                         {this.state.modalcategory && <Dropdown />}
                     </Home>
