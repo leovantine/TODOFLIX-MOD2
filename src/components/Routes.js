@@ -8,12 +8,12 @@ import Todos from "./pages/Todos.js"
 import Favoritos from "./pages/Favoritos.js"
 import Vistos from "./pages/Vistos.js"
 import Adicionados from "./pages/Adicionados.js"
-export default class Routes extends Components {
+export default class App extends Component {
     render(){
         return(
             <>
             <Routes>
-                <Route path="/" element={<Início />} />
+                <Route path="/" element={<Inicio />} />
                 <Route path="Todos" element={<Todos />} />
                 <Route path="Favoritos" element={<Favoritos />} />
                 <Route path="Vistos" element={<Vistos />} />

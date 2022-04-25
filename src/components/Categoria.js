@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
-import {
-    Link
-} from 'react-router-dom'
+import { 
+    Link, Router
+} from "react-router-dom"
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -21,28 +21,34 @@ list-style: none;
 width: 100%;
 height: 100%;
 `
-export default class Dropdown extends Component {
-    render(){
-        return(
+const List = styled.li`
+
+`
+const Linking = styled(Link)`
+
+`
+export default class App extends Component {
+    render() {
+        return (
             <Router>
             <GlobalStyle/>
-            <Container>
-                <Ulist>
-                    <li>
-                        <Link to="/todos">Todos</Link>
-                    </li>
-                    <li>
-                        <Link to="/favoritos">Favoritos</Link>
-                    </li>
-                    <li>
-                        <Link to="/vistos">Já vistos</Link>
-                    </li>
-                    <li>
-                        <Link to="/adicionados">Adicionados</Link>
-                    </li>
-                </Ulist>
-            </Container>
-            </Router>
+                <Container>
+                    <Ulist>
+                        <List>
+                            <Linking to="/todos">Todos</Linking>
+                        </List>
+                        <List>
+                            <Linking to="/favoritos">Favoritos</Linking>
+                        </List>
+                        <List>
+                            <Linking to="/vistos">Já vistos</Linking>
+                        </List>
+                        <List>
+                            <Linking to="/adicionados">Adicionados</Linking>
+                        </List>
+                    </Ulist>
+                </Container>
+                </Router>
         )
     }
 }

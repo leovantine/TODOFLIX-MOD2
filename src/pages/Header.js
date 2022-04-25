@@ -4,6 +4,7 @@ import Iconuser from "./Imagens/Iconuser.png"
 import {
     Link
 } from 'react-router-dom'
+import Dropdown from "./components/Categoria.js"
 import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components'
 
@@ -13,6 +14,9 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 }
+`
+const Container = styled.div`
+
 `
 const Header = styled.div`
 display: flex;
@@ -84,7 +88,7 @@ width: 2vw;
 height: 5vh;
 margin-right: 2vw;
 `
-export default class Header extends Component {
+export default class App extends Component {
     state = {
         modalcategory: false
     }
@@ -101,7 +105,7 @@ export default class Header extends Component {
                         <Title>TODOFLIX</Title>
                         <Homepage><Link to="/">Início</Link></Homepage>
                         <Category onClick={this.modalcategory}>Categorias<span>&#9663;</span></Category>
-                        {this.state.modalcategory && <Modal />}
+                        {this.state.modalcategory && <Dropdown />}
                     </Home>
 
                     <Optionsdiv>
