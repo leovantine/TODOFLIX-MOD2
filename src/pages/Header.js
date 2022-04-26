@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Usericon from "../Imagens/Usericon.png"
-import Iconuser from "../Imagens/Iconuser.png"
-import Lupa from "../Imagens/Lupa.png"
+import Usericon from "../imagens/Usericon.png"
+import Iconuser from "../imagens/Iconuser.png"
+import Lupa from "../imagens/Lupa.png"
 import {
     Link
 } from 'react-router-dom'
@@ -71,11 +71,12 @@ width: 40%;
 margin: 3vh;
 `
 const Button = styled.button`
-width: 6vw;
+width: 7vw;
 height: 4vh;
-font-size: 12px;
+font-size: 13px;
 color: #fff;
 background-color: #E71B27;
+box-shadow: 0 0 1em red;
 border: none;
 border-radius: 4px;
 &:hover{
@@ -89,6 +90,18 @@ background-color: #2C2C2C;
 border: none;
 border-radius: 3px;
 color: #fff;
+background-image: url(${Lupa});
+background-size: 2.8vh;
+background-repeat: no-repeat;
+background-position: 1%;
+::placeholder{
+    text-align: center;
+    width: 8vw;
+    color: #fff;
+}
+&:hover{
+    cursor: pointer;
+}
 `
 const Img = styled.img`
 width: 2vw;
@@ -115,7 +128,7 @@ export default class App extends Component {
                     <Home>
                         <Title>TODOFLIX</Title>
                         <Homepage><Linking to="/">Início</Linking></Homepage>
-                        <Category onClick={this.modalcategory}>Categorias<span>&#9663;</span></Category>
+                        <Category onClick={this.openmenu}>Categorias<span>&#9663;</span></Category>
                         {this.state.modalcategory && <Dropdown />}
                     </Home>
 
