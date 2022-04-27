@@ -17,12 +17,12 @@ const GlobalStyle = createGlobalStyle`
 }
 `
 const Container = styled.div`
-
+width: 100%;
 `
 const Header = styled.div`
 display: flex;
 justify-content: space-between;
-width: 100vw;
+width: 100%;
 posiiton: fixed;
 `
 const Home = styled.div`
@@ -86,6 +86,7 @@ border-radius: 4px;
 const Search = styled.input`
 width: 22vw;
 height: 4vh;
+text-align: center;
 background-color: #2C2C2C;
 border: none;
 border-radius: 3px;
@@ -100,7 +101,8 @@ background-position: 1%;
     color: #fff;
 }
 &:hover{
-    cursor: pointer;
+    cursor: text;
+    color: #fff;
 }
 `
 const Img = styled.img`

@@ -27,8 +27,8 @@ const GlobalStyle = createGlobalStyle`
 }
 `
 const Container = styled.div`
-width: 100vw;
-height: 100%;
+width: 100%;
+height: 100vh;
 `
 const Divimg = styled.div`
 display: flex;
@@ -47,11 +47,14 @@ box-shadow: inset 0 0 1em gold, 0 0 1em red;
 const Info = styled.div`
 display: flex;
 flex-direction: column;
-margin-left: 30vw;
+margin-left: 500px;
 position: relative;
 bottom: 30vh;
 `
 const Heart = styled.svg`
+&:hover{
+    cursor: pointer;
+}
 `
 const Viewed = styled.p`
 color: #fff;
@@ -67,6 +70,13 @@ width: 30vw;
 `
 const Thebest = styled.h2`
 color: #fff;
+
+`
+const Img = styled.img`
+width: 310px;
+height: 180px;
+`
+const Boxcarousel = styled.div`
 
 `
 export default class App extends Component {
@@ -159,24 +169,25 @@ export default class App extends Component {
                         <Overview>Um alerta vermelho da Interpol é emitido e o agente do FBI John Hartley assume o caso. Durante sua busca, ele se vê diante de um assalto ousado e é forçado a se aliar ao maior ladrão de arte da história, Nolan Booth, para capturar a ladra de arte mais procurada do mundo atualmente, Sarah Black.</Overview>
                     </Info>
                 </Divimg>
-                <div>
-                    <Carousel>
-                        <img src={Amorsemmedida} alt="Filme: Amor sem medida" />
-                        <img src={Aquiteplace2} alt="Filme: Um lugar silencioso - Parte II" />
-                        <img src={Encanto} alt="Filme: Encanto" />
-                        <img src={Houseofwax} alt="Filme: A casa de cera" />
-                        <img src={Lovehard} alt="Filme: Um match surpresa" />
-                        <img src={Maleficent} alt="Filme: Malévola" />
-                        <img src={Nightbooks} alt="Filme: Noitários de arrepiar" />
-                        <img src={Omensageirodapaz} alt="Filme: Divaldo- O mensageiro da paz" />
-                        <img src={Pitchperfect3} alt="Filme: A escolha perfeita" />
-                        <img src={Theadamproject} alt="Filme: O projeto adam" />
-                        <img src={Thechocolatefactory} alt="Filme: A fantástica fábrica de chocolate" />
-                        <img src={Thedevilwearsprada} alt="Filme: O diabo veste prada" />
-                        <img src={Turningred} alt="Filme: Red: Crescer é uma fera" />
-                        <img src={Whitechicks} alt="Filme: As branquelas" />
+                <Thebest>Destaques</Thebest>
+                <Boxcarousel>
+                    <Carousel adaptiveHeight={true} slidesToShow={5} cellAlign={'left'} cellSpacing={10}>
+                        <Img src={Amorsemmedida} alt="Filme: Amor sem medida" />
+                        <Img src={Aquiteplace2} alt="Filme: Um lugar silencioso - Parte II" />
+                        <Img src={Encanto} alt="Filme: Encanto" />
+                        <Img src={Houseofwax} alt="Filme: A casa de cera" />
+                        <Img src={Lovehard} alt="Filme: Um match surpresa" />
+                        <Img src={Maleficent} alt="Filme: Malévola" />
+                        <Img src={Nightbooks} alt="Filme: Noitários de arrepiar" />
+                        <Img src={Omensageirodapaz} alt="Filme: Divaldo- O mensageiro da paz" />
+                        <Img src={Pitchperfect3} alt="Filme: A escolha perfeita" />
+                        <Img src={Theadamproject} alt="Filme: O projeto adam" />
+                        <Img src={Thechocolatefactory} alt="Filme: A fantástica fábrica de chocolate" />
+                        <Img src={Thedevilwearsprada} alt="Filme: O diabo veste prada" />
+                        <Img src={Turningred} alt="Filme: Red: Crescer é uma fera" />
+                        <Img src={Whitechicks} alt="Filme: As branquelas" />
                     </Carousel>
-                </div>
+                    </Boxcarousel>
             </Container>
         )
     }

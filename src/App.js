@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from "./pages/Header.js"
+import Inicio from "./pages/Inicio.js"
 import Route from "./components/Routes.js"
 import {BrowserRouter as Router, Routes} from 'react-router-dom'
 import styled from 'styled-components'

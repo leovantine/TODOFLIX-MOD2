@@ -13,11 +13,14 @@ const GlobalStyle = createGlobalStyle`
 }
 `
 const Container = styled.div`
-background-color: #fff;
+height: 15vh;
+width: 7vw;
+text-align: center;
+padding: 1vh;
+background-color: #000;
 position:absolute;
-top:6.5vh;
-left:18vw;
-    
+top: 7vh;
+left: 25vw;
 `
 const Ulist = styled.ul`
 list-style: none;
@@ -25,9 +28,20 @@ color: #fff;
 `
 const List = styled.li`
 color: #fff;
+margin: 0.5vh;
+font-weight: bolder;
+&:hover{
+    cursor: pointer;
+    color: #E71B27;
+}
 `
 const Linking = styled(Link)`
 color: #fff;
+text-decoration: none;
+&:hover{
+    cursor: pointer;
+    color: #E71B27;
+}
 `
 export default class App extends Component {
     render() {
