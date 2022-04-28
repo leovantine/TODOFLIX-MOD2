@@ -33,6 +33,62 @@ color: #fff;
 margin: 3vh;
 margin-left: 6vw;
 `
+const MoviesBox = styled.div`
+width: 100%;
+height: 100%;
+`
+const Firstmovies = styled.div`
+display: flex;
+justify-content: space-evenly;
+width: 75vw; 
+margin-left: 5vw;
+`
+const CardOne = styled.img`
+width: 280px;
+border-radius: 6px;
+`
+const InfoOne = styled.div`
+display: flex;
+justify-content: space-evenly;
+width: 100vw;
+height: 100%;
+`
+const Stmovie = styled.h4`
+color: #fff;
+margin-left: 4vw;
+`
+const Ndmovie = styled.h4`
+color: #fff;
+margin-right: 29vw;
+`
+const Rdmovie = styled.h4`
+color: #fff;
+`
+const Thmovie = styled.h4`
+color: #fff;
+`
+const SecondMovies = styled.div`
+display: flex;
+justify-content: space-evenly;
+width: 75vw; 
+margin: 10vh;
+margin-left: 5vw;
+`
+const Cardtwo = styled.img`
+width: 280px;
+border-radius: 6px;
+`
+const Thirdmovies = styled.div`
+display: flex;
+justify-content: space-evenly;
+width: 75vw; 
+margin: 10vh;
+margin-left: 5vw;
+`
+const Cardthree = styled.img`
+width: 280px;
+border-radius: 6px;
+`
 export default class App extends Component {
     state = {
         movies: [
@@ -112,10 +168,36 @@ export default class App extends Component {
         return (
             <Container>
                 <Title>Todos</Title>
-                <div>
-                    <div>
-                    </div>
-                </div>
+                <MoviesBox>
+                    <Firstmovies>
+                        <CardOne src={Amorsemmedida} alt="Filme: Amor sem medida" />
+                        <CardOne src={Aquiteplace2} alt="Filme: A quite place - Parte II" />
+                        <CardOne src={Encanto} alt="Filme: Encanto" />
+                        <CardOne src={Houseofwax} alt="Filme: A casa de cera" />
+                    </Firstmovies>
+
+                    {/* <InfoOne>
+                        <Stmovie>Amor sem medida</Stmovie>
+                        <Ndmovie>Um lugar silencioso - Parte II</Ndmovie>
+                        <Rdmovie>Encanto</Rdmovie>
+                        <Thmovie>A casa de cera</Thmovie>
+                    </InfoOne> */}
+
+                    <SecondMovies>
+                        <Cardtwo src={Lovehard} alt="Filme: Um match surpresa" />
+                        <Cardtwo src={Maleficent} alt="Filme: Malévola" />
+                        <Cardtwo src={Nightbooks} alt="Filme: Noitários de arrepiar" />
+                        <Cardtwo src={Omensageirodapaz} alt="Filme: Divaldo - O mensageiro da paz" />
+                    </SecondMovies>
+
+                    <Thirdmovies>
+                        <Cardthree src={Pitchperfect3} alt="Filme: A escolha perfeita 3" />
+                        <Cardthree src={Theadamproject} alt="Filme: O projeto adam" />
+                        <Cardthree src={Thechocolatefactory} alt="Filme: A fantástica fábrica de chocolate" />
+                        <Cardthree src={Thedevilwearsprada} alt="Filme: O diabo veste prada" />
+                    </Thirdmovies>
+
+                </MoviesBox>
             </Container>
         )
     }

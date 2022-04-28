@@ -33,7 +33,8 @@ height: 100vh;
 const Divimg = styled.div`
 display: flex;
 flex-direction: column;
-margin: 10vh;
+margin-left: 6vw;
+padding-top: 5vh;
 `
 const MainImg = styled.img`
 width: 30%;
@@ -47,7 +48,7 @@ box-shadow: inset 0 0 1em gold, 0 0 1em red;
 const Info = styled.div`
 display: flex;
 flex-direction: column;
-margin-left: 500px;
+margin-left: 34vw;
 position: relative;
 bottom: 30vh;
 `
@@ -70,14 +71,12 @@ width: 30vw;
 `
 const Thebest = styled.h2`
 color: #fff;
-
 `
 const Img = styled.img`
 width: 310px;
 height: 180px;
 `
 const Boxcarousel = styled.div`
-
 `
 export default class App extends Component {
     state = {
@@ -171,7 +170,7 @@ export default class App extends Component {
                 </Divimg>
                 <Thebest>Destaques</Thebest>
                 <Boxcarousel>
-                    <Carousel adaptiveHeight={true} slidesToShow={5} cellAlign={'left'} cellSpacing={10}>
+                    <Carousel slidesToShow={5} cellAlign={'left'} disableEdgeSwiping={true}>
                         <Img src={Amorsemmedida} alt="Filme: Amor sem medida" />
                         <Img src={Aquiteplace2} alt="Filme: Um lugar silencioso - Parte II" />
                         <Img src={Encanto} alt="Filme: Encanto" />
