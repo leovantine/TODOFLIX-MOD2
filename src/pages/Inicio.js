@@ -75,6 +75,11 @@ color: #fff;
 const Img = styled.img`
 width: 310px;
 height: 180px;
+border-radius: 6px;
+&:hover{
+    cursor: pointer;
+    
+}
 `
 const Boxcarousel = styled.div`
 `
@@ -170,7 +175,7 @@ export default class App extends Component {
                 </Divimg>
                 <Thebest>Destaques</Thebest>
                 <Boxcarousel>
-                    <Carousel slidesToShow={5} cellAlign={'left'} disableEdgeSwiping={true}>
+                    <Carousel slidesToShow={5} cellAlign={'left'} disableEdgeSwiping={true} wrapAround={true} autoplay={true}>
                         <Img src={Amorsemmedida} alt="Filme: Amor sem medida" />
                         <Img src={Aquiteplace2} alt="Filme: Um lugar silencioso - Parte II" />
                         <Img src={Encanto} alt="Filme: Encanto" />
@@ -186,6 +191,9 @@ export default class App extends Component {
                         <Img src={Turningred} alt="Filme: Red: Crescer é uma fera" />
                         <Img src={Whitechicks} alt="Filme: As branquelas" />
                     </Carousel>
+                    <div>
+                        <h4>{this.state.title}</h4>                                       
+                    </div>
                     </Boxcarousel>
             </Container>
         )

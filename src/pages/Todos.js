@@ -17,6 +17,21 @@ import Thedevilwearsprada from "../imagens/Thedevilwearsprada.jpg"
 import Turningred from "../imagens/Turningred.jpg"
 import Whitechicks from "../imagens/Whitechicks.jpg"
 
+import Theinbetween from "../imagens/Theinbetween.jpg"
+import Snowwhite from "../imagens/Snowwhite.jpg"
+import Thenutcracker from "../imagens/Thenutcracker.jpg"
+import Alice from "../imagens/Alice.jpg"
+import Getout from "../imagens/Getout.jpg"
+import Redridinghood from "../imagens/Redridinghood.jpg"
+import Philosophersstone from "../imagens/Philosophersstone.jpg"
+import Chamberofsecrets from "../imagens/Chamberofsecrets.jpg"
+import Prisionerofazkaban from "../imagens/Prisionerofazkaban"
+import Breakingdown2 from "../imagens/"
+import A from "../imagens/"
+import A from "../imagens/"
+import A from "../imagens/"
+import A from "../imagens/"
+
 const GlobalStyle = createGlobalStyle`
 *{
     margin: 0;
@@ -46,6 +61,10 @@ margin-left: 5vw;
 const CardOne = styled.img`
 width: 280px;
 border-radius: 6px;
+&:hover{
+    cursor: pointer;
+    transform:scale(1.1);
+  }
 `
 const InfoOne = styled.div`
 display: flex;
@@ -77,6 +96,10 @@ margin-left: 5vw;
 const Cardtwo = styled.img`
 width: 280px;
 border-radius: 6px;
+&:hover{
+    cursor: pointer;
+    transform:scale(1.1);
+  }
 `
 const Thirdmovies = styled.div`
 display: flex;
@@ -88,6 +111,10 @@ margin-left: 5vw;
 const Cardthree = styled.img`
 width: 280px;
 border-radius: 6px;
+&:hover{
+    cursor: pointer;
+    transform:scale(1.1);
+  }
 `
 export default class App extends Component {
     state = {
