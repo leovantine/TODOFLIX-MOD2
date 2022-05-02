@@ -25,12 +25,12 @@ import Getout from "../imagens/Getout.jpg"
 import Redridinghood from "../imagens/Redridinghood.jpg"
 import Philosophersstone from "../imagens/Philosophersstone.jpg"
 import Chamberofsecrets from "../imagens/Chamberofsecrets.jpg"
-import Prisionerofazkaban from "../imagens/Prisionerofazkaban"
-import Breakingdown2 from "../imagens/"
-import A from "../imagens/"
-import A from "../imagens/"
-import A from "../imagens/"
-import A from "../imagens/"
+import Prisionerofazkaban from "../imagens/Prisionerofazkaban.jpg"
+import Breakingdown2 from "../imagens/Breakingdown2.jpg"
+import Orphan from "../imagens/Orphan.jpg"
+import Coraline from "../imagens/Coraline.jpg"
+import Remember from "../imagens/Remember.jpg"
+import Moonfall from "../imagens/Moonfall.jpg"
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -48,73 +48,10 @@ color: #fff;
 margin: 3vh;
 margin-left: 6vw;
 `
-const MoviesBox = styled.div`
-width: 100%;
-height: 100%;
-`
-const Firstmovies = styled.div`
+const Img = styled.img`
 display: flex;
-justify-content: space-evenly;
-width: 75vw; 
-margin-left: 5vw;
-`
-const CardOne = styled.img`
-width: 280px;
-border-radius: 6px;
-&:hover{
-    cursor: pointer;
-    transform:scale(1.1);
-  }
-`
-const InfoOne = styled.div`
-display: flex;
-justify-content: space-evenly;
-width: 100vw;
-height: 100%;
-`
-const Stmovie = styled.h4`
-color: #fff;
-margin-left: 4vw;
-`
-const Ndmovie = styled.h4`
-color: #fff;
-margin-right: 29vw;
-`
-const Rdmovie = styled.h4`
-color: #fff;
-`
-const Thmovie = styled.h4`
-color: #fff;
-`
-const SecondMovies = styled.div`
-display: flex;
-justify-content: space-evenly;
-width: 75vw; 
-margin: 10vh;
-margin-left: 5vw;
-`
-const Cardtwo = styled.img`
-width: 280px;
-border-radius: 6px;
-&:hover{
-    cursor: pointer;
-    transform:scale(1.1);
-  }
-`
-const Thirdmovies = styled.div`
-display: flex;
-justify-content: space-evenly;
-width: 75vw; 
-margin: 10vh;
-margin-left: 5vw;
-`
-const Cardthree = styled.img`
-width: 280px;
-border-radius: 6px;
-&:hover{
-    cursor: pointer;
-    transform:scale(1.1);
-  }
+flex-wrap: wrap;
+width: 300px;
 `
 export default class App extends Component {
     state = {
@@ -188,6 +125,76 @@ export default class App extends Component {
                 title: "As branquelas",
                 banner: Whitechicks,
                 overview: "Dois irmãos agentes do FBI, Marcus e Kevin Copeland, acidentalmente evitam que bandidos sejam presos em uma apreensão de drogas. Como castigo, eles são forçados a escoltar um par de socialites nos Hamptons. Porém, quando as meninas descobrem o plano da agência, se recusam a ir. Sem opções, Marcus e Kevin decidem posar como as irmãs, transformando-se de homens afro-americanos em um par de loiras."
+            },
+            {
+                title:"Ainda estou aqui",
+                banner: Theinbetween,
+                overview: "Uma adolescente perde o amor da sua vida em um trágico acidente. Arrasada, a jovem começa a achar que o rapaz está se comunicando com ela do além."
+            },
+            {
+                title:"Branca de neve e o caçador",
+                banner: Snowwhite,
+                overview: " Branca de Neve e a única pessoa na terra mais bonita do que a rainha má, a qual está decidida a destruí-la. Porém o que a malvada tirana nunca imaginou é que a jovem que ameaça seu reinado vem treinando a arte da guerra com o caçador, que foi enviado para matá-la. O príncipe há muito tempo encantado pela beleza e pelo poder da Branca de Neve."
+            },
+            {
+                title: "O quebra nozes e os quatro reinos",
+                banner: Thenutcracker,
+                overview: "Clara, uma jovem esperta e independente, perde a única chave mágica capaz de abrir um presente de valor incalculável dado por seu padrinho. Ela decide então iniciar uma jornada de resgate que a leva pelo Reino dos Doces, o Reino das Neves, o Reino das Flores e o sinistro Quarto Reino."
+            },
+            {
+                title: "Alice através do espelho",
+                banner: Alice,
+                overview: "Alice retorna após uma longa viagem pelo mundo, e reencontra a mãe. No casarão de uma grande festa, percebe a presença de um espelho mágico. A jovem atravessa o objeto e retorna ao País das Maravilhas, onde descobre que o Chapeleiro Maluco e sua família correm risco de morte. Para salvar o amigo, Alice deve conversar com o Tempo para voltar às vésperas de um evento traumático e mudar seus destinos cruéis."
+            },
+            {
+                title: "Corra",
+                banner: Getout,
+                overview: "Chris é um jovem fotógrafo negro que está prestes a conhecer os pais de Rose, sua namorada caucasiana. Com o tempo, ele percebe que a família dela esconde algo muito perturbador."
+            },
+            {
+                title: "A garota da capa vermelha",
+                banner: Redridinghood,
+                overview: "Valerie é uma jovem que vive em um vilarejo aterrorizado por um lobisomem. Ela é apaixonada por Peter, embora seus pais insistam que ela case com Henry, filho de uma família rica do local. Diante da situação, Valerie e Peter planejam fugir, mas veem seus planos irem por água abaixo quando a irmã mais velha de Valerie é assassinada pelo lobisomem que ronda a região. Eles recorrem ao padre Solomon, um caçador famoso de monstros que adverte que a fera toma forma humana durante o dia."
+            },
+            {
+                title: "Harry Potter e a pedra filosofal",
+                banner: Philosophersstone,
+                overview: "Harry Potter é um garoto órfão que vive infeliz com seus tios, os Dursleys. Ele recebe uma carta contendo um convite para ingressar em Hogwarts, uma famosa escola especializada em formar jovens bruxos. Inicialmente, Harry é impedido de ler a carta por seu tio, mas logo recebe a visita de Hagrid, o guarda-caça de Hogwarts, que chega para levá-lo até a escola. Harry adentra um mundo mágico que jamais imaginara, vivendo diversas aventuras com seus novos amigos, Rony Weasley e Hermione Granger."
+            },
+            {
+                title: "Harry Potter e a câmara secreta",
+                banner: Chamberofsecrets,
+                overview: "Após as sofríveis férias na casa dos tios, Harry Potter se prepara para voltar a Hogwarts e começar seu segundo ano na escola de bruxos. Na véspera do início das aulas, a estranha criatura Dobby aparece em seu quarto e o avisa de que voltar é um erro e que algo muito ruim pode acontecer se Harry insistir em continuar os estudos de bruxaria. O garoto, no entanto, está disposto a correr o risco e se livrar do lar problemático."
+            },
+            {
+                title:"Harry Potter e o prisioneiro de Azkaban",
+                banner: Prisionerofazkaban,
+                overview: "É o início do terceiro ano na escola de bruxaria Hogwarts. Harry, Ron e Hermione têm muito o que aprender. Mas uma ameaça ronda a escola e ela se chama Sirius Black. Após doze anos encarcerado na prisão de Azkaban, ele consegue escapar e volta para vingar seu mestre, Lord Voldemort. Para piorar, os Dementores, guardas supostamente enviados para proteger Hogwarts e seguir os passos de Black, parecem ser ameaças ainda mais perigosas."
+            },
+            {
+                title: "A saga crepúsculo: Amanhecer - Parte 2",
+                banner: Breakingdown2,
+                overview: "Depois do nascimento da filha de Bella e Edward, Renesmee, os Cullen reúnem lobisomens, clãs de vampiros e outros aliados de todo o mundo para protegê-la, já que uma falsa alegação faz com que os Volturi queiram matá-la."
+            },
+            {
+                title: "A órfã",
+                banner: Orphan,
+                overview: "Uma série de eventos alarmantes faz com que uma mulher acredite que algum mal esteja por trás do rosto angelical da filha de nove anos, recentemente adotada."
+            },
+            {
+                title: "Coraline e o mundo secreto",
+                banner: Coraline,
+                overview: "Enquanto explora sua nova casa à noite, a pequena Coraline descobre uma porta secreta que contém um mundo parecido com o dela, porém melhor em muitas maneiras. Todos têm botões no lugar dos olhos, os pais são carinhosos e os sonhos de Coraline viram realidade por lá. Ela se encanta com essa descoberta, mas logo percebe que segredos estranhos estão em ação: uma outra mãe e o resto de sua família tentam mantê-la eternamente nesse mundo paralelo."
+            },
+            {
+                title: "Lembranças",
+                banner: Remember,
+                overview: "Tyler tem uma relação complicada com seu pai desde uma tragédia em sua família. Rebelde e problemático, ele acha que ninguém entende seu sofrimento, até que conhece a simpática e carinhosa Ally. Mas justamente quando o jovem redescobre a felicidade, segredos começam a surgir e ameaçam o romance."
+            },
+            {
+                title: "Moonfall - Ameaça Lunar",
+                banner: Moonfall,
+                overview: "Em Moonfall, por motivos desconhecidos, a Lua sai de sua órbita e passa a se deslocar em direção à Terra, podendo causar uma colisão em breve. A ex-astrounauta da NASA, Jo Fowler (Halle Berry), acha que pode resolver essa situação e impedir que o impacto aconteça, mas apenas um de seus colegas (Patrick Wilson) acredita nela. Em situação de emergência, um grupo de cientistas não especializados no assunto aceita a missão de ir até a Lua e impedir a colisão antes que a vida humana seja extinta. Mas ao chegarem lá, eles percebem que a Lua não é exatamente a pedra gigante orbitando a Terra que acharam que era. Com o mundo à beira da aniquilação, Jo Fowler precisará unir forças a um homem de seu passado e um teórico da conspiração para uma missão impossível no espaço, e salvar a humanidade."
             }
         ]
     }
@@ -195,36 +202,9 @@ export default class App extends Component {
         return (
             <Container>
                 <Title>Todos</Title>
-                <MoviesBox>
-                    <Firstmovies>
-                        <CardOne src={Amorsemmedida} alt="Filme: Amor sem medida" />
-                        <CardOne src={Aquiteplace2} alt="Filme: A quite place - Parte II" />
-                        <CardOne src={Encanto} alt="Filme: Encanto" />
-                        <CardOne src={Houseofwax} alt="Filme: A casa de cera" />
-                    </Firstmovies>
-
-                    {/* <InfoOne>
-                        <Stmovie>Amor sem medida</Stmovie>
-                        <Ndmovie>Um lugar silencioso - Parte II</Ndmovie>
-                        <Rdmovie>Encanto</Rdmovie>
-                        <Thmovie>A casa de cera</Thmovie>
-                    </InfoOne> */}
-
-                    <SecondMovies>
-                        <Cardtwo src={Lovehard} alt="Filme: Um match surpresa" />
-                        <Cardtwo src={Maleficent} alt="Filme: Malévola" />
-                        <Cardtwo src={Nightbooks} alt="Filme: Noitários de arrepiar" />
-                        <Cardtwo src={Omensageirodapaz} alt="Filme: Divaldo - O mensageiro da paz" />
-                    </SecondMovies>
-
-                    <Thirdmovies>
-                        <Cardthree src={Pitchperfect3} alt="Filme: A escolha perfeita 3" />
-                        <Cardthree src={Theadamproject} alt="Filme: O projeto adam" />
-                        <Cardthree src={Thechocolatefactory} alt="Filme: A fantástica fábrica de chocolate" />
-                        <Cardthree src={Thedevilwearsprada} alt="Filme: O diabo veste prada" />
-                    </Thirdmovies>
-
-                </MoviesBox>
+                {this.state.movies.map(item => (<>
+                    <Img src={item.banner} alt="Filmes" />
+                </>))}
             </Container>
         )
     }

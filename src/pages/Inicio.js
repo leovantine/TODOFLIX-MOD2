@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #fff;
 }
 `
 const Container = styled.div`
@@ -82,6 +83,16 @@ border-radius: 6px;
 }
 `
 const Boxcarousel = styled.div`
+width: 100%;
+height: 100vh;
+`
+const Title = styled.h4`
+color:#fff;
+`
+const Sinopse = styled.h5`
+color: #fff;
+font-size: 12px;
+text-align: left;
 `
 export default class App extends Component {
     state = {
@@ -173,28 +184,12 @@ export default class App extends Component {
                         <Overview>Um alerta vermelho da Interpol é emitido e o agente do FBI John Hartley assume o caso. Durante sua busca, ele se vê diante de um assalto ousado e é forçado a se aliar ao maior ladrão de arte da história, Nolan Booth, para capturar a ladra de arte mais procurada do mundo atualmente, Sarah Black.</Overview>
                     </Info>
                 </Divimg>
-                <Thebest>Destaques</Thebest>
-                <Boxcarousel>
                     <Carousel slidesToShow={5} cellAlign={'left'} disableEdgeSwiping={true} wrapAround={true} autoplay={true}>
-                        <Img src={Amorsemmedida} alt="Filme: Amor sem medida" />
-                        <Img src={Aquiteplace2} alt="Filme: Um lugar silencioso - Parte II" />
-                        <Img src={Encanto} alt="Filme: Encanto" />
-                        <Img src={Houseofwax} alt="Filme: A casa de cera" />
-                        <Img src={Lovehard} alt="Filme: Um match surpresa" />
-                        <Img src={Maleficent} alt="Filme: Malévola" />
-                        <Img src={Nightbooks} alt="Filme: Noitários de arrepiar" />
-                        <Img src={Omensageirodapaz} alt="Filme: Divaldo- O mensageiro da paz" />
-                        <Img src={Pitchperfect3} alt="Filme: A escolha perfeita" />
-                        <Img src={Theadamproject} alt="Filme: O projeto adam" />
-                        <Img src={Thechocolatefactory} alt="Filme: A fantástica fábrica de chocolate" />
-                        <Img src={Thedevilwearsprada} alt="Filme: O diabo veste prada" />
-                        <Img src={Turningred} alt="Filme: Red: Crescer é uma fera" />
-                        <Img src={Whitechicks} alt="Filme: As branquelas" />
+                        {this.state.movies.map(item => (<>
+                            <Img src={item.banner} alt="Filmes" />
+                            <Title>{item.title}</Title>
+                        </>))}
                     </Carousel>
-                    <div>
-                        <h4>{this.state.title}</h4>                                       
-                    </div>
-                    </Boxcarousel>
             </Container>
         )
     }
