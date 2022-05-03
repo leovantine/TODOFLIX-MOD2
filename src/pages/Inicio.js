@@ -29,13 +29,18 @@ const GlobalStyle = createGlobalStyle`
 `
 const Container = styled.div`
 width: 100%;
-height: 100vh;
+height: 45vh;
 `
 const Divimg = styled.div`
 display: flex;
 flex-direction: column;
 margin-left: 6vw;
-padding-top: 5vh;
+padding-top: 6vh;
+height: 39vh;
+`
+const Boxcarousel = styled.div`
+background-color: green;
+margin-left: 6vw;
 `
 const MainImg = styled.img`
 width: 30%;
@@ -70,29 +75,30 @@ const Overview = styled.p`
 color: #fff;
 width: 30vw;
 `
-const Thebest = styled.h2`
-color: #fff;
-`
 const Img = styled.img`
-width: 310px;
-height: 180px;
+width: 290px;
+height: 170px;
 border-radius: 6px;
 &:hover{
     cursor: pointer;
     
 }
 `
-const Boxcarousel = styled.div`
+/* const Boxcarousel = styled.div`
 width: 100%;
 height: 100vh;
-`
+` */
 const Title = styled.h4`
 color:#fff;
 `
-const Sinopse = styled.h5`
+const Sinopsediv = styled.div`
+`
+const Sinopse = styled.p`
 color: #fff;
 font-size: 12px;
 text-align: left;
+`
+const Textp = styled.div`
 `
 export default class App extends Component {
     state = {
@@ -166,31 +172,68 @@ export default class App extends Component {
                 title: "As branquelas",
                 banner: Whitechicks,
                 overview: "Dois irmãos agentes do FBI, Marcus e Kevin Copeland, acidentalmente evitam que bandidos sejam presos em uma apreensão de drogas. Como castigo, eles são forçados a escoltar um par de socialites nos Hamptons. Porém, quando as meninas descobrem o plano da agência, se recusam a ir. Sem opções, Marcus e Kevin decidem posar como as irmãs, transformando-se de homens afro-americanos em um par de loiras."
+            },
+            {
+                film: filmes,
+                filter: []
+
             }
         ]
     }
-    render() {
-        return (
-            <Container>
-                <Divimg>
-                    <MainImg src={RedNotice} alt="Red Notice" />
-                    <Info>
-                        <Heart id="Component_11_1" data-name="Component 11 – 1" xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22">
-                            <ellipse id="Ellipse_8" data-name="Ellipse 8" cx="10.5" cy="11" rx="10.5" ry="11" fill="#717171" />
-                            <path id="Path_407" data-name="Path 407" d="M865.16-1403.7l-.893-.813c-3.172-2.877-5.266-4.774-5.266-7.1a3.355,3.355,0,0,1,3.388-3.388,3.689,3.689,0,0,1,2.772,1.287,3.689,3.689,0,0,1,2.772-1.287,3.355,3.355,0,0,1,3.388,3.388c0,2.328-2.094,4.225-5.267,7.108Z" transform="translate(-854.5 1421)" fill="#b1b1b1" />
-                        </Heart>
-                        <Viewed>Visto recentemente</Viewed>
-                        <Ndtitle>Alerta Vermelho</Ndtitle>
-                        <Overview>Um alerta vermelho da Interpol é emitido e o agente do FBI John Hartley assume o caso. Durante sua busca, ele se vê diante de um assalto ousado e é forçado a se aliar ao maior ladrão de arte da história, Nolan Booth, para capturar a ladra de arte mais procurada do mundo atualmente, Sarah Black.</Overview>
-                    </Info>
-                </Divimg>
-                    <Carousel slidesToShow={5} cellAlign={'left'} disableEdgeSwiping={true} wrapAround={true} autoplay={true}>
-                        {this.state.movies.map(item => (<>
-                            <Img src={item.banner} alt="Filmes" />
-                            <Title>{item.title}</Title>
-                        </>))}
-                    </Carousel>
-            </Container>
-        )
+    async componentDidMount() {
+        this.filmes()
     }
+    filmes = async () => {
+        const Filmesfilter = this.setState({
+            filter: this.state.film
+        })
+    }
+    filterfilmes = (event) => {
+        const { filmes } = this.state
+
+        if (event.target.value === "") {
+            this.setState({
+                Filter: filmes
+            })
+            return
+        }
+        const Convert = filmes.filter((item) => {
+            if (item.title.tolowerCase().includes(event.target.value.toLowerCase())) {
+                return true
+            }
+        })
+        this.setState({
+            Filter: Convert
+        })
+    }
+}
+render() {
+    return (
+        <Container>
+            <Divimg>
+                <MainImg src={RedNotice} alt="Red Notice" />
+                <Info>
+                    <Heart id="Component_11_1" data-name="Component 11 – 1" xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22">
+                        <ellipse id="Ellipse_8" data-name="Ellipse 8" cx="10.5" cy="11" rx="10.5" ry="11" fill="#717171" />
+                        <path id="Path_407" data-name="Path 407" d="M865.16-1403.7l-.893-.813c-3.172-2.877-5.266-4.774-5.266-7.1a3.355,3.355,0,0,1,3.388-3.388,3.689,3.689,0,0,1,2.772,1.287,3.689,3.689,0,0,1,2.772-1.287,3.355,3.355,0,0,1,3.388,3.388c0,2.328-2.094,4.225-5.267,7.108Z" transform="translate(-854.5 1421)" fill="#b1b1b1" />
+                    </Heart>
+                    <Viewed>Visto recentemente</Viewed>
+                    <Ndtitle>Alerta Vermelho</Ndtitle>
+                    <Overview>Um alerta vermelho da Interpol é emitido e o agente do FBI John Hartley assume o caso. Durante sua busca, ele se vê diante de um assalto ousado e é forçado a se aliar ao maior ladrão de arte da história, Nolan Booth, para capturar a ladra de arte mais procurada do mundo atualmente, Sarah Black.</Overview>
+                </Info>
+            </Divimg>
+            <Boxcarousel>
+                <Carousel slidesToShow={5} cellAlign={'left'} disableEdgeSwiping={true} wrapAround={true} autoplay={true}>
+                    {this.state.movies.map(item => (<>
+                        <Img src={item.banner} alt="Filmes" />
+                        <Title>{item.title}</Title>
+                        <Sinopsediv>
+                            <Sinopse>{item.overview}</Sinopse>
+                        </Sinopsediv>
+                    </>))}
+                </Carousel>
+            </Boxcarousel>
+        </Container>
+    )
+  }
 }

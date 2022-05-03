@@ -49,8 +49,6 @@ margin: 3vh;
 margin-left: 6vw;
 `
 const Img = styled.img`
-display: flex;
-flex-wrap: wrap;
 width: 300px;
 `
 export default class App extends Component {

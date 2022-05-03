@@ -22,7 +22,7 @@ width: 100%;
 const Header = styled.div`
 display: flex;
 justify-content: space-between;
-width: 100%;
+/* width: 100%; */
 posiiton: fixed;
 `
 const Home = styled.div`
