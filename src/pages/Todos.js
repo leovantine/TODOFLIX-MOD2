@@ -50,6 +50,25 @@ margin-left: 6vw;
 `
 const Img = styled.img`
 width: 300px;
+display: flex;
+flex-wrap: wrap;
+`
+const Moviesbox = styled.div`
+display: flex;
+flex-wrap: wrap;
+`
+const InfoBox = styled.div`
+
+`
+const H4 = styled.h4`
+color: #fff;
+`
+const P = styled.p`
+color: #fff; 
+width: 30vw;
+font-size: 12px;
+width: 20vw;
+height: 25vh;
 `
 export default class App extends Component {
     state = {
@@ -125,12 +144,12 @@ export default class App extends Component {
                 overview: "Dois irmãos agentes do FBI, Marcus e Kevin Copeland, acidentalmente evitam que bandidos sejam presos em uma apreensão de drogas. Como castigo, eles são forçados a escoltar um par de socialites nos Hamptons. Porém, quando as meninas descobrem o plano da agência, se recusam a ir. Sem opções, Marcus e Kevin decidem posar como as irmãs, transformando-se de homens afro-americanos em um par de loiras."
             },
             {
-                title:"Ainda estou aqui",
+                title: "Ainda estou aqui",
                 banner: Theinbetween,
                 overview: "Uma adolescente perde o amor da sua vida em um trágico acidente. Arrasada, a jovem começa a achar que o rapaz está se comunicando com ela do além."
             },
             {
-                title:"Branca de neve e o caçador",
+                title: "Branca de neve e o caçador",
                 banner: Snowwhite,
                 overview: " Branca de Neve e a única pessoa na terra mais bonita do que a rainha má, a qual está decidida a destruí-la. Porém o que a malvada tirana nunca imaginou é que a jovem que ameaça seu reinado vem treinando a arte da guerra com o caçador, que foi enviado para matá-la. O príncipe há muito tempo encantado pela beleza e pelo poder da Branca de Neve."
             },
@@ -165,7 +184,7 @@ export default class App extends Component {
                 overview: "Após as sofríveis férias na casa dos tios, Harry Potter se prepara para voltar a Hogwarts e começar seu segundo ano na escola de bruxos. Na véspera do início das aulas, a estranha criatura Dobby aparece em seu quarto e o avisa de que voltar é um erro e que algo muito ruim pode acontecer se Harry insistir em continuar os estudos de bruxaria. O garoto, no entanto, está disposto a correr o risco e se livrar do lar problemático."
             },
             {
-                title:"Harry Potter e o prisioneiro de Azkaban",
+                title: "Harry Potter e o prisioneiro de Azkaban",
                 banner: Prisionerofazkaban,
                 overview: "É o início do terceiro ano na escola de bruxaria Hogwarts. Harry, Ron e Hermione têm muito o que aprender. Mas uma ameaça ronda a escola e ela se chama Sirius Black. Após doze anos encarcerado na prisão de Azkaban, ele consegue escapar e volta para vingar seu mestre, Lord Voldemort. Para piorar, os Dementores, guardas supostamente enviados para proteger Hogwarts e seguir os passos de Black, parecem ser ameaças ainda mais perigosas."
             },
@@ -200,8 +219,16 @@ export default class App extends Component {
         return (
             <Container>
                 <Title>Todos</Title>
+
+
                 {this.state.movies.map(item => (<>
-                    <Img src={item.banner} alt="Filmes" />
+                    <Moviesbox>
+                        <Img src={item.banner} alt="Filmes" />
+                    </Moviesbox>
+                    <InfoBox>
+                        <H4>{item.title}</H4>
+                        <P>{item.overview}</P>
+                    </InfoBox>
                 </>))}
             </Container>
         )

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Carousel from 'nuka-carousel'
+import Carousel, { NextButton } from 'nuka-carousel'
 import styled from 'styled-components'
 import RedNotice from "../imagens/RedNotice.jpg"
 import { createGlobalStyle } from 'styled-components'
@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
 `
 const Container = styled.div`
 width: 100%;
-height: 40vh;
+height: 30vh;
 background-color:;
 `
 const Divimg = styled.div`
@@ -46,6 +46,8 @@ margin: ;
 const Boxcarousel = styled.div`
 background-color:;
 margin: 13vh;
+display: flex;
+flex-direction: column;
 `
 const MainImg = styled.img`
 width: 30%;
@@ -66,6 +68,7 @@ bottom: 30vh;
 const Heart = styled.svg`
 &:hover{
     cursor: pointer;
+    transform:scale(1.1);
 }
 `
 const Viewed = styled.p`
@@ -82,6 +85,15 @@ color: #fff;
 font-size: 14px;
 width: 30vw;
 `
+const Ndheart = styled.svg`
+margin-bottom: 18vh;
+position: relative;
+right: 1.5vw;
+&:hover{
+    cursor: pointer;
+    transform:scale(1.1);
+}
+`
 const Img = styled.img`
 width: 300px;
 height: 170px;
@@ -90,6 +102,13 @@ border-radius: 6px;
     cursor: pointer;
     
 }
+`
+const Rating = styled.div`
+display: flex;
+justify-content: flex-end;
+margin-right: 2vw;
+align-items: center;
+width: 19vw;
 `
 /* const Boxcarousel = styled.div`
 width: 100%;
@@ -111,7 +130,6 @@ height:20px;
 `
 const P = styled.p`
 display: flex;
-
 color: #fff;
 `
 export default class App extends Component {
@@ -209,11 +227,11 @@ export default class App extends Component {
     }
     movies = async () => {
         const moviesfilter = this.setState({
-            filter: this.state.filmes 
+            filter: this.state.filmes
         })
     }
     filtermovies = (event) => {
-        const {filmes} = this.state
+        const { filmes } = this.state
 
         if (event.target.value === "") {
             this.setState({
@@ -230,37 +248,43 @@ export default class App extends Component {
             filter: Convert
         })
     }
-render() {
-    return (
-        <Container>
-            <Divimg>
-                <MainImg src={RedNotice} alt="Red Notice" />
-                <Info>
-                    <Heart id="Component_11_1" data-name="Component 11 – 1" xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22">
-                        <ellipse id="Ellipse_8" data-name="Ellipse 8" cx="10.5" cy="11" rx="10.5" ry="11" fill="#717171" />
-                        <path id="Path_407" data-name="Path 407" d="M865.16-1403.7l-.893-.813c-3.172-2.877-5.266-4.774-5.266-7.1a3.355,3.355,0,0,1,3.388-3.388,3.689,3.689,0,0,1,2.772,1.287,3.689,3.689,0,0,1,2.772-1.287,3.355,3.355,0,0,1,3.388,3.388c0,2.328-2.094,4.225-5.267,7.108Z" transform="translate(-854.5 1421)" fill="#b1b1b1" />
-                    </Heart>
-                    <Viewed>Visto recentemente</Viewed>
-                    <Ndtitle>Alerta Vermelho</Ndtitle>
-                    <Overview>Um alerta vermelho da Interpol é emitido e o agente do FBI John Hartley assume o caso. Durante sua busca, ele se vê diante de um assalto ousado e é forçado a se aliar ao maior ladrão de arte da história, Nolan Booth, para capturar a ladra de arte mais procurada do mundo atualmente, Sarah Black.</Overview>
-                </Info>
-            </Divimg>
-            <Boxcarousel>
-            <Thebest>Destaques</Thebest>
-                <Carousel slidesToShow={4} cellAlign={'left'} disableEdgeSwiping={true} wrapAround={true} autoplay={true}>
-                    {this.state.movies.map(item => (<>
-                        <Img src={item.banner} alt="Filmes" />
-                        <Svg style={{padding:"0 0vw 0.5vh 0"}} id="IconThumbsUpFilled" data-name="Icon / Thumbs Up / Filled" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
-                                        <rect id="Box" width="17" height="17" fill="none" />
-                                        <path id="Path1994" data-name="Path 1994" d="M97-8.286h2.805v-8.229H97Zm15.429-7.543a1.391,1.391,0,0,0-1.4-1.371H106.6l.666-3.134.021-.219a1.021,1.021,0,0,0-.309-.727l-.743-.72-4.615,4.519a1.326,1.326,0,0,0-.414.967v6.857a1.391,1.391,0,0,0,1.4,1.371h6.312a1.394,1.394,0,0,0,1.29-.837l2.118-4.834a1.328,1.328,0,0,0,.1-.5v-1.31l-.007-.007Z" transform="translate(-96.143 23.714)" fill="white" style={item.nota >= 5 ? { fill: '#0B3B0B' } : item.nota === 4 ? { fill: '#64FE2E' } : item.nota === 3 ? { fill: 'yellow' } : { fill: 'red' }} />
-                                    </Svg>
-                        <Title onChange={this.filtermovies}>{item.title}</Title>
+    render() {
+        return (
+            <Container>
+                <Divimg>
+                    <MainImg src={RedNotice} alt="Red Notice" />
+                    <Info>
+                        <Heart id="Component_11_1" data-name="Component 11 – 1" xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22">
+                            <ellipse id="Ellipse_8" data-name="Ellipse 8" cx="10.5" cy="11" rx="10.5" ry="11" fill="#717171" />
+                            <path id="Path_407" data-name="Path 407" d="M865.16-1403.7l-.893-.813c-3.172-2.877-5.266-4.774-5.266-7.1a3.355,3.355,0,0,1,3.388-3.388,3.689,3.689,0,0,1,2.772,1.287,3.689,3.689,0,0,1,2.772-1.287,3.355,3.355,0,0,1,3.388,3.388c0,2.328-2.094,4.225-5.267,7.108Z" transform="translate(-854.5 1421)" fill="#b1b1b1" />
+                        </Heart>
+                        <Viewed>Visto recentemente</Viewed>
+                        <Ndtitle>Alerta Vermelho</Ndtitle>
+                        <Overview>Um alerta vermelho da Interpol é emitido e o agente do FBI John Hartley assume o caso. Durante sua busca, ele se vê diante de um assalto ousado e é forçado a se aliar ao maior ladrão de arte da história, Nolan Booth, para capturar a ladra de arte mais procurada do mundo atualmente, Sarah Black.</Overview>
+                    </Info>
+                </Divimg>
+                <Boxcarousel>
+                    <Thebest>Destaques</Thebest>
+                    <Carousel slidesToShow={4} cellAlign={'left'} disableEdgeSwiping={true} wrapAround={true} autoplay={true} >
+                        {this.state.movies.map(item => (<>
+                            <Img src={item.banner} alt="Filmes" />
+                            <Ndheart id="Component_11_1" data-name="Component 11 – 1" xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22">
+                                <ellipse id="Ellipse_8" data-name="Ellipse 8" cx="10.5" cy="11" rx="10.5" ry="11" fill="#717171" />
+                                <path id="Path_407" data-name="Path 407" d="M865.16-1403.7l-.893-.813c-3.172-2.877-5.266-4.774-5.266-7.1a3.355,3.355,0,0,1,3.388-3.388,3.689,3.689,0,0,1,2.772,1.287,3.689,3.689,0,0,1,2.772-1.287,3.355,3.355,0,0,1,3.388,3.388c0,2.328-2.094,4.225-5.267,7.108Z" transform="translate(-854.5 1421)" fill="#b1b1b1" />
+                            </Ndheart>
+                            <Rating>
+                                <P>{item.nota}/5</P>
+                                <Svg style={{ padding: "0 0vw 0.5vh 0" }} id="IconThumbsUpFilled" data-name="Icon / Thumbs Up / Filled" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                                    <rect id="Box" width="17" height="17" fill="none" />
+                                    <path id="Path1994" data-name="Path 1994" d="M97-8.286h2.805v-8.229H97Zm15.429-7.543a1.391,1.391,0,0,0-1.4-1.371H106.6l.666-3.134.021-.219a1.021,1.021,0,0,0-.309-.727l-.743-.72-4.615,4.519a1.326,1.326,0,0,0-.414.967v6.857a1.391,1.391,0,0,0,1.4,1.371h6.312a1.394,1.394,0,0,0,1.29-.837l2.118-4.834a1.328,1.328,0,0,0,.1-.5v-1.31l-.007-.007Z" transform="translate(-96.143 23.714)" fill="white" style={item.nota >= 4 ? { fill: '#01F202' } : item.nota >= 3 ? { fill: '#F23900' } : item.nota < 3 ? { fill: '#E60000' } : { fill: '#E60000' }} />
+                                </Svg>
+                            </Rating>
+                            <Title onChange={this.filtermovies}>{item.title}</Title>
                             <Sinopse>{item.overview}</Sinopse>
-                            <P>{item.nota}</P>
-                    </>))}
-                </Carousel>
-            </Boxcarousel>
-        </Container>
-    )
-  }
+                        </>))}
+                    </Carousel>
+                </Boxcarousel>
+            </Container>
+        )
+    }
 }
