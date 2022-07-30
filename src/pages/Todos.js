@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { createGlobalStyle } from 'styled-components'
 
 import Amorsemmedida from "../imagens/Amorsemmedida.jpg"
 import Aquiteplace2 from "../imagens/Aquiteplace2.jpg"
@@ -32,16 +31,12 @@ import Coraline from "../imagens/Coraline.jpg"
 import Remember from "../imagens/Remember.jpg"
 import Moonfall from "../imagens/Moonfall.jpg"
 
-const GlobalStyle = createGlobalStyle`
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-`
 const Container = styled.div`
 width: 100%;
-height: 100%;
+height: 90vh;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
 `
 const Title = styled.h1`
 color: #fff;
@@ -49,13 +44,12 @@ margin: 3vh;
 margin-left: 6vw;
 `
 const Img = styled.img`
-width: 300px;
-display: flex;
-flex-wrap: wrap;
+width: 60%;
 `
 const Moviesbox = styled.div`
-display: flex;
-flex-wrap: wrap;
+border: solid red;
+width: 30vw; 
+height: 50vh;
 `
 const InfoBox = styled.div`
 
@@ -220,15 +214,14 @@ export default class App extends Component {
             <Container>
                 <Title>Todos</Title>
 
-
                 {this.state.movies.map(item => (<>
                     <Moviesbox>
                         <Img src={item.banner} alt="Filmes" />
+                        <InfoBox>
+                            <H4>{item.title}</H4>
+                            <P>{item.overview}</P>
+                        </InfoBox>
                     </Moviesbox>
-                    <InfoBox>
-                        <H4>{item.title}</H4>
-                        <P>{item.overview}</P>
-                    </InfoBox>
                 </>))}
             </Container>
         )
