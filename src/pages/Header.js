@@ -37,15 +37,7 @@ import {
 } from 'react-router-dom'
 import Dropdown from "../components/Categoria.js"
 import styled from 'styled-components'
-import { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-`
 const Container = styled.div`
 width: 100%;
 `
@@ -300,11 +292,6 @@ export default class App extends Component {
     async componentDidMount() {
         this.movies()
     }
-    movies = async () => {
-        const moviesfilter = this.setState({
-            filter: this.state.filmes 
-        })
-    }
     filtermovies = (event) => {
         const {filmes} = this.state
 
@@ -330,7 +317,6 @@ export default class App extends Component {
     render() {
         return (
             <Container>
-                <GlobalStyle />
                 <Header>
                     <Home>
                         <Title>TODOFLIX</Title>
